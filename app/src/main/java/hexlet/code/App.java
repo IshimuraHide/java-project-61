@@ -2,7 +2,7 @@ package hexlet.code;
 
 
 import java.util.Scanner;
-import hexlet.code.Cli.*;
+
 
 public class App {
     public static void main(String[] args) {
@@ -14,13 +14,16 @@ public class App {
         Scanner sc = new Scanner(System.in);
         String input = sc.next();
         Cli client = new Cli();
-        switch(input) {
+        switch (input) {
             case "1" :
                 client.setName(Cli.askUserName());
                 break;
             case "2" :
                 client.setName(Cli.askUserName());
                 Games.checkIsEven(client.getName());
+                break;
+            case "0" :
+            default:
                 break;
         }
 

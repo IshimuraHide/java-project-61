@@ -23,13 +23,13 @@ public class Cli {
         this.name = name;
     }
 
-    public static String askUserName () {
+    public static String askUserName() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner sc = new Scanner(System.in);
-        String UserName = sc.next();
-        System.out.println("Hello, " + UserName + "!");
-        return UserName;
+        String userName = sc.next();
+        System.out.println("Hello, " + userName + "!");
+        return userName;
     }
 
 }
