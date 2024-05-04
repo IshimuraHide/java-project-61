@@ -22,6 +22,9 @@ public class App {
                 client.setName(Cli.askUserName());
                 Games.checkIsEven(client.getName());
                 break;
+            case "3" :
+                client.setName(Cli.askUserName());
+                break;
             case "0" :
             default:
                 break;

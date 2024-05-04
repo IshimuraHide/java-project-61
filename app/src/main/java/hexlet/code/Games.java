@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 
 public class Games {
+
     public static void checkIsEven(String name) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int res = 0;
@@ -19,12 +20,17 @@ public class Games {
                 res++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + (isEven ? "'yes'" : "'no'"));
-                res = 0;
+                break;
 
             }
 
         }
-        System.out.println("Congratulations, " + name);
+        if (res == 3) {
+            System.out.println("Congratulations, " + name);
+        }
+    }
 
+    public static void calculate(){
+        System.out.println("Please enter the game number and press Enter.");
     }
 }
