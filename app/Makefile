@@ -14,6 +14,8 @@ install:
 	./gradlew clean install
 test:
 	./gradlew test
+checkstyle:
+	gradle checkstyleMain
 
 
 build-run: build run
