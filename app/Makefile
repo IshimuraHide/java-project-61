@@ -4,6 +4,8 @@ clean:
 	./gradlew clean
 build:
 	./gradlew clean build
+build2:
+	./gradlew clean installDist
 run:
 	./gradlew run
 check-deps:
@@ -12,6 +14,7 @@ install:
 	./gradlew clean install
 test:
 	./gradlew test
+
 
 build-run: build run
 
