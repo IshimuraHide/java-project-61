@@ -22,6 +22,7 @@ public class Cli {
         System.out.println("May I have your name?");
         Scanner sc = new Scanner(System.in);
         String UserName = sc.next();
+        sc.close();
         System.out.println("Hello, " + UserName + "!");
 
     }
