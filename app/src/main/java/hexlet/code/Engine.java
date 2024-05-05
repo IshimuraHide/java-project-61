@@ -1,5 +1,9 @@
 package hexlet.code;
 
 public class Engine {
-    Engine (int id)
+    public int id;
+
+    Engine (int id) {
+        this.id = id;
+    }
 }
