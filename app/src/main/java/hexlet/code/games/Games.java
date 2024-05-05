@@ -172,7 +172,7 @@ public class Games {
             }
             String question = "Question : " + number1 + " " + currentOperator + " " + number2;
             System.out.println(question);
-            System.out.println("Answer : ");
+            System.out.print("Answer : ");
             Scanner sc = new Scanner(System.in);
             int answer = sc.nextInt();
 
