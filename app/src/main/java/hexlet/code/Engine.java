@@ -15,13 +15,18 @@ public class Engine {
         boolean isWin = false;
         switch (input) {
             case 1 :
-                break;
+                return;
             case 2 :
                 isWin = Games.checkIsEven(tryCount);
                 break;
             case 3 :
                 isWin = Games.calculate(tryCount);
                 break;
+            case 4 :
+                isWin = Games.getGCD(tryCount);
+                break;
+            case 5 :
+                isWin = Games.progression(tryCount);
             case 0 :
             default:
                 break;

@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -48,6 +49,60 @@ public class Games {
         return true;
     }
 
+    public static boolean getGCD(int tryCount){
+        System.out.println("Find the greatest common divisor of given numbers.");
+        int res = 0;
+        while (res < tryCount) {
+
+            int number1 = (int) (Math.random() * 20);
+            int number2 = (int) (Math.random() * 20);
+            int a = number1;
+            int b = number2;
+                while(b != 0) {
+                    int tmp = a % b;
+                    a = b;
+                    b = tmp;
+                }
+            int answerCorrect = a;
+
+            String question ="Question : " +  number1 + " " + number2;
+            System.out.println(question);
+
+            System.out.println("Answer : ");
+            Scanner sc = new Scanner(System.in);
+            int answer = sc.nextInt();
+
+            boolean isCorrect = compareAnswer(answer, answerCorrect);
+            if (isCorrect) {
+                res++;
+            } else return false;
+        }
+        return true;
+    }
+
+    public static boolean progression(int truCount) {
+        System.out.println("What number is missing in the progression?");
+        int res = 0;
+        int lenProgression = 10; //длина прогрессии
+        while (res < truCount) {
+            int startNumber = (int) (Math.random() * 10);
+            int stepProgression = (int) (Math.random() * 10);
+            int[] numbers = new int[lenProgression];
+            for (int i = 0; i < lenProgression; i++) {
+                numbers[i] = startNumber + stepProgression * i;
+            }
+            String question ="Question : " +  Arrays.toString(numbers);
+            Scanner sc = new Scanner(System.in);
+            int answer = sc.nextInt();
+            int answerCorrect = stepProgression;
+            boolean isCorrect = compareAnswer(answer, answerCorrect);
+            if (isCorrect) {
+                res++;
+            } else return false;
+        }
+        return true;
+    }
+
     public static boolean calculate(int tryCount){
 
         System.out.println("What is the result of the expression?");
@@ -73,16 +128,7 @@ public class Games {
                 default:
                     break;
             }
-            StringBuilder expStrBuilder = new StringBuilder();
-            expStrBuilder.append(number1);
-            expStrBuilder.append(" ");
-            expStrBuilder.append(currentOperator);
-            expStrBuilder.append(" ");
-            expStrBuilder.append(number2);
-            String expression = expStrBuilder.toString();
-            StringBuilder questionStrBuilder = new StringBuilder(expStrBuilder);
-            questionStrBuilder.insert(0, "Question : ");
-            String question = questionStrBuilder.toString();
+            String question = "Question : " + number1 + " " + currentOperator + " " + number2;
             System.out.println(question);
             System.out.println("Answer : ");
             Scanner sc = new Scanner(System.in);
