@@ -44,12 +44,14 @@ public class Games {
             boolean isCorrect = compareAnswer(answer, answerCorrect);
             if (isCorrect) {
                 res++;
-            } else return false;
+            } else {
+                return false;
+            }
         }
         return true;
     }
 
-    public static boolean getGCD(int tryCount){
+    public static boolean getGCD(int tryCount) {
         System.out.println("Find the greatest common divisor of given numbers.");
         int res = 0;
         while (res < tryCount) {
@@ -58,24 +60,27 @@ public class Games {
             int number2 = (int) (Math.random() * 20);
             int a = number1;
             int b = number2;
-                while(b != 0) {
-                    int tmp = a % b;
-                    a = b;
-                    b = tmp;
-                }
+
+            while (b != 0) {
+                int tmp = a % b;
+                a = b;
+                b = tmp;
+            }
             int answerCorrect = a;
 
-            String question ="Question : " +  number1 + " " + number2;
+            String question = "Question : " +  number1 + " " + number2;
             System.out.println(question);
 
-            System.out.println("Answer : ");
+            System.out.print("Answer : ");
             Scanner sc = new Scanner(System.in);
             int answer = sc.nextInt();
 
             boolean isCorrect = compareAnswer(answer, answerCorrect);
             if (isCorrect) {
                 res++;
-            } else return false;
+            } else {
+                return false;
+            }
         }
         return true;
     }
@@ -85,25 +90,62 @@ public class Games {
         int res = 0;
         int lenProgression = 10; //длина прогрессии
         while (res < truCount) {
-            int startNumber = (int) (Math.random() * 10);
-            int stepProgression = (int) (Math.random() * 10);
+            int startNumber = (int) (Math.random() * 10 + 1);
+            int stepProgression = (int) (Math.random() * 10 + 2);
             int[] numbers = new int[lenProgression];
             for (int i = 0; i < lenProgression; i++) {
                 numbers[i] = startNumber + stepProgression * i;
             }
-            String question ="Question : " +  Arrays.toString(numbers);
+            String question = "Question : " +  Arrays.toString(numbers)
+                            .replace(",", "")
+                            .replace("]", "")
+                            .replace("[", "");
+            System.out.println(question);
+
+            System.out.print("Answer : ");
             Scanner sc = new Scanner(System.in);
             int answer = sc.nextInt();
             int answerCorrect = stepProgression;
             boolean isCorrect = compareAnswer(answer, answerCorrect);
             if (isCorrect) {
                 res++;
-            } else return false;
+            } else {
+                return false;
+            }
         }
         return true;
     }
 
-    public static boolean calculate(int tryCount){
+    public static boolean isPrime(int tryCount) {
+
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        int res = 0;
+        while (res < tryCount) {
+            String answerCorrect = "yes";
+            int number = (int) (Math.random() * 100);
+            for (int i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    answerCorrect = "no";
+                    break;
+                }
+            }
+            String question = "Question : " + number;
+            System.out.println(question);
+            System.out.print("Answer : ");
+            Scanner sc = new Scanner(System.in);
+            String answer = sc.next();
+            boolean isCorrect = compareAnswer(answer, answerCorrect);
+            if (isCorrect) {
+                res++;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    public static boolean calculate(int tryCount) {
 
         System.out.println("What is the result of the expression?");
         String[] operators = {"+", "-", "*"};
@@ -137,7 +179,9 @@ public class Games {
             boolean isCorrect = compareAnswer(answer, answerCorrect);
             if (isCorrect) {
                 res++;
-            } else return false;
+            } else {
+                return false;
+            }
         }
         return true;
 

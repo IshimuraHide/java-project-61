@@ -11,7 +11,7 @@ public class Engine {
         String nameClient = Cli.askUserName();
         client.setName(nameClient);
         String sucessMessage = "Congratulations, " + nameClient + "!";
-        String failureMessage = "Let's try again, "+ nameClient +"!";
+        String failureMessage = "Let's try again, " + nameClient + "!";
         boolean isWin = false;
         switch (input) {
             case 1 :
@@ -27,6 +27,10 @@ public class Engine {
                 break;
             case 5 :
                 isWin = Games.progression(tryCount);
+                break;
+            case 6 :
+                isWin = Games.isPrime(tryCount);
+                break;
             case 0 :
             default:
                 break;
