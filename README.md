@@ -1,17 +1,23 @@
 Asciinema
 
 Greet
-https://asciinema.org/a/fGmJGBEJHBL7mVXFAuXEgJWAv
+[![asciicast]({https://asciinema.org/a/fGmJGBEJHBL7mVXFAuXEgJWAv}.svg)]({https://asciinema.org/a/fGmJGBEJHBL7mVXFAuXEgJWAv})  
+
 Even
-https://asciinema.org/a/2OCGBv7ZqougpB2fEQWW3KZAY
+[![asciicast]({https://asciinema.org/a/2OCGBv7ZqougpB2fEQWW3KZAY}.svg)]({https://asciinema.org/a/2OCGBv7ZqougpB2fEQWW3KZAY})
+
 Calc
-https://asciinema.org/a/0vQX9uXCKA0rJjsbHMyJW3jNY
+[![asciicast]({https://asciinema.org/a/0vQX9uXCKA0rJjsbHMyJW3jNY}.svg)]({https://asciinema.org/a/0vQX9uXCKA0rJjsbHMyJW3jNY})
+
 GCD
-https://asciinema.org/a/SKoThITS8ByVxS4oLwthl6VTS
+[![asciicast]({https://asciinema.org/a/SKoThITS8ByVxS4oLwthl6VTS}.svg)]({https://asciinema.org/a/SKoThITS8ByVxS4oLwthl6VTS})
+
 Progression
-https://asciinema.org/a/dXfa5KhchY1pkkukfwkK0KpXu
+[![asciicast]({https://asciinema.org/a/dXfa5KhchY1pkkukfwkK0KpXu}.svg)]({https://asciinema.org/a/dXfa5KhchY1pkkukfwkK0KpXu})
+
 Prime
-https://asciinema.org/a/vsAk1PUXaLNHg1FQuVZYHVHDS
+[![asciicast]({https://asciinema.org/a/vsAk1PUXaLNHg1FQuVZYHVHDS}.svg)]({https://asciinema.org/a/vsAk1PUXaLNHg1FQuVZYHVHDS})
+
 
 
 
