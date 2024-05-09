@@ -1,12 +1,11 @@
 package hexlet.code;
 
-
-import hexlet.code.games.*;
-
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.Gcd;
+import hexlet.code.games.PrimeNumber;
+import hexlet.code.games.Progression;
 import java.util.Scanner;
-
-
-
 
 public class App {
     public static void main(String[] args) {
@@ -22,7 +21,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int input = sc.nextInt();
         Engine eng = new Engine();
-        final int tryCount = 3; //количество попыток
+        final int tryCount = 3; //количество успешных решений для завершения
         switch (input) {
             case 1 :
                 Cli.askUserName();

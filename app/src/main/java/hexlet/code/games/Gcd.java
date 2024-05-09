@@ -2,14 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Scanner;
 
 public class Gcd {
 
     public static int getGCD(int number1, int number2) {
 
-        //int number1 = (int) (Math.random() * 20);
-        //int number2 = (int) (Math.random() * 20);
         int a = number1;
         int b = number2;
 
@@ -29,12 +26,12 @@ public class Gcd {
 
         for (int i = 0; i < tryCount; i++) {
 
-            int number1 = Games.getRandomNumber();
-            int number2 = Games.getRandomNumber();
+            int number1 = Engine.getRandomNumber();
+            int number2 = Engine.getRandomNumber();
 
             results[i] = String.valueOf(getGCD(number1, number2));
             expressions[i] = number1 + " " + number2;
         }
-        return new Engine(description,expressions, results);
+        return new Engine(description, expressions, results);
     }
 }

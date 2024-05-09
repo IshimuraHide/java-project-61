@@ -2,8 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Scanner;
-
 public class PrimeNumber {
 
     public static boolean isPrime(int number) {
@@ -21,11 +19,11 @@ public class PrimeNumber {
         String[] results = new String[tryCount];
         String[] expressions = new String[tryCount];
         for (int i = 0; i < tryCount; i++) {
-            int number1 = Games.getRandomNumber();
+            int number1 = Engine.getRandomNumber();
 
-            results[i] = isPrime(number1)? "yes" : "no";
+            results[i] = isPrime(number1) ? "yes" : "no";
             expressions[i] = String.valueOf(number1);
         }
-        return new Engine(description,expressions, results);
+        return new Engine(description, expressions, results);
     }
 }

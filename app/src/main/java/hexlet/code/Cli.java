@@ -5,24 +5,6 @@ import java.util.Scanner;
 
 public class Cli {
 
-    private String name;
-
-
-    Cli(String name) {
-        this.name = name;
-    }
-
-    Cli() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public static String askUserName() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
