@@ -16,7 +16,7 @@ public class Progression {
 
     public static Engine packGameData(int tryCount) {
 
-        int lenProgression = 10; //длина прогрессии
+        final int lenProgression = 10; //длина прогрессии
 
         String description = "What number is missing in the progression?";
         String[] results = new String[tryCount];

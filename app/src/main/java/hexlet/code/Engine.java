@@ -10,7 +10,6 @@ public class Engine {
 
     }
 
-    //конструктор данных для движка
     public Engine(String description, String[] expressions, String[] results) {
         this.description = description;
         this.expressions = expressions;
@@ -33,7 +32,8 @@ public class Engine {
                 System.out.println("Correct!");
                 currentTry++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(." +
+                                   " Correct answer was '" + correctAnswer + "'");
                 break;
             }
         }
@@ -75,8 +75,8 @@ public class Engine {
     }
 
     public static int getRandomNumber() {
-
-        return (int) (Math.random() * 20);
+        final int randomMax = 20;
+        return (int) (Math.random() * randomMax);
 
     }
 
