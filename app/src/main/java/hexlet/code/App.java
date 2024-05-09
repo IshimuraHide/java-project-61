@@ -19,30 +19,31 @@ public class App {
         System.out.print("Your choice: ");
         Scanner sc = new Scanner(System.in);
         int input = sc.nextInt();
-        Games game = new Games();
+        Engine eng = new Engine();
         switch (input) {
             case 1 :
+                Cli.askUserName();
                 return;
             case 2 :
-                game = Even.evenGame;
+                //eng = Calc.packGameData();
                 break;
             case 3 :
-                game = Calc.calcGame;
+                eng = Calc.packGameData();
                 break;
             case 4 :
-                game = Gcd.gcdGame;
+                //game = Gcd.gcdGame;
                 break;
             case 5 :
-                game = Progression.progressionGame;
+               // game = Progression.progressionGame;
                 break;
             case 6 :
-                game = PrimeNumber.primeGame;
+               // game = PrimeNumber.primeGame;
                 break;
             case 0 :
             default:
                 break;
         }
-        Engine.runGame(game);
+        Engine.runGame(eng);
 
 
     }

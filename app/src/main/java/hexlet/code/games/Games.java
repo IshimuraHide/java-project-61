@@ -4,11 +4,14 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
+
 public class Games {
     private String description;
+    private int numbersQuantity;
 
-    public Games(String description) {
+    public Games(String description, int numbersQuantity) {
         this.description = description;
+        this.numbersQuantity = numbersQuantity;
     }
     public Games(){
 
@@ -35,6 +38,11 @@ public class Games {
         }
     }
 
+    public static int getRandomNumber() {
+        int randomNumber = (int) (Math.random() * 20);
+        return randomNumber;
+    }
+
 
     public String getDescription() {
         return description;
@@ -44,6 +52,11 @@ public class Games {
         this.description = description;
     }
 
+    public int getNumbersQuantity() {
+        return numbersQuantity;
+    }
 
-
+    public void setNumbersQuantity(int numbersQuantity) {
+        this.numbersQuantity = numbersQuantity;
+    }
 }

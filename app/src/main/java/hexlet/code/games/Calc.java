@@ -1,23 +1,14 @@
 package hexlet.code.games;
 
 import java.util.Scanner;
+
+import hexlet.code.Engine;
 import hexlet.code.games.Games;
 
 public class Calc {
+    //private static String description = "What is the result of the expression?";
 
-    private static String description = "What is the result of the expression?";
-    public static Games calcGame = new Games(description);
-
-
-    public static int calculate() {
-
-        //System.out.println("What is the result of the expression?");
-        String[] operators = {"+", "-", "*"};
-
-        int number1 = (int) (Math.random() * 100);
-        int number2 = (int) (Math.random() * 100);
-        int operatorNumber = (int) (Math.random() * operators.length);
-        var currentOperator = operators[operatorNumber];
+    public static int calculate(int number1, int number2, String currentOperator) {
 
         int res = 0;
         switch (currentOperator) {
@@ -33,15 +24,36 @@ public class Calc {
             default:
                 break;
         }
-        String question = "Question : " + number1 + " " + currentOperator + " " + number2;
-        System.out.println(question);
-        System.out.print("Answer : ");
-        Scanner sc = new Scanner(System.in);
-        int answer = sc.nextInt();
+        //String question = "Question : " + number1 + " " + currentOperator + " " + number2;
+        //System.out.println(question);
+        //System.out.print("Answer : ");
+        //Scanner sc = new Scanner(System.in);
+        //int answer = sc.nextInt();
 
     return res;
+    }
+
+    public static Engine packGameData() {
+        String description = "What is the result of the expression?";
+
+        int number1 = Games.getRandomNumber();
+        int number2 = Games.getRandomNumber();
+
+        String[] operators = {"+", "-", "*"};
+        int operatorNumber = (int) (Math.random() * operators.length);
+        String currentOperator = operators[operatorNumber];;
+
+        int res = calculate(number1, number2, currentOperator);
+
+        String expression = number1 + " " +  currentOperator +" " +number2;
+
+        return new Engine(description,expression, res);
+    }
+
 
     }
 
 
-}
+
+
+

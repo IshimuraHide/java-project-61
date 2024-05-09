@@ -5,27 +5,15 @@ import java.util.Scanner;
 public class PrimeNumber {
 
     private static String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    public static Games primeGame = new Games(description);
+    private static int numbersCount = 1;
+    public static Games primeGame = new Games(description, numbersCount);
 
-    public static boolean isPrime(int tryCount) {
+    public static boolean isPrime(int number) {
 
-        //System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        int res = 0;
-        while (res < tryCount) {
-            String answerCorrect = "yes";
-            int number = (int) (Math.random() * 100);
-            for (int i = 2; i < number; i++) {
-                if (number % i == 0) {
-                    answerCorrect = "no";
-                    break;
-                }
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
             }
-            String question = "Question : " + number;
-            System.out.println(question);
-            System.out.print("Answer : ");
-            Scanner sc = new Scanner(System.in);
-            String answer = sc.next();
-
         }
         return true;
     }
