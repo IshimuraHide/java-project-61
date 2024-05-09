@@ -46,12 +46,12 @@ public class Engine {
 
     public static String getGameQuestion(Engine eng, int count) {
 
-        String message = "Question : " + eng.getExpression(count);
+        String message = "Question: " + eng.getExpression(count);
         return message;
     }
 
     public static String getUserAnswer() {
-        System.out.print("Answer : ");
+        System.out.print("Your answer: ");
         Scanner sc = new Scanner(System.in);
         return sc.next();
     }
