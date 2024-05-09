@@ -19,7 +19,7 @@ public class PrimeNumber {
         String[] results = new String[tryCount];
         String[] expressions = new String[tryCount];
         for (int i = 0; i < tryCount; i++) {
-            int number1 = Engine.getRandomNumber();
+            int number1 = Engine.getRandomNumber() + 1; //число должно быть больше единицы
 
             results[i] = isPrime(number1) ? "yes" : "no";
             expressions[i] = String.valueOf(number1);
