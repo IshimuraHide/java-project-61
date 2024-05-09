@@ -5,6 +5,9 @@ import hexlet.code.Engine;
 public class PrimeNumber {
 
     public static boolean isPrime(int number) {
+        if (number == 1) {
+            return true;
+        }
 
         for (int i = 2; i < number; i++) {
             if (number % i == 0) {
@@ -19,7 +22,7 @@ public class PrimeNumber {
         String[] results = new String[tryCount];
         String[] expressions = new String[tryCount];
         for (int i = 0; i < tryCount; i++) {
-            int number1 = Engine.getRandomNumber() + 1; //число должно быть больше единицы
+            int number1 = Engine.getRandomNumber() + 1; //число должно быть больше нуля
 
             results[i] = isPrime(number1) ? "yes" : "no";
             expressions[i] = String.valueOf(number1);
