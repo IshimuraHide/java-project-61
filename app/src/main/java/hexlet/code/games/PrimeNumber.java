@@ -15,7 +15,7 @@ public class PrimeNumber {
     }
 
     public static Engine packGameData(int tryCount) {
-        String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[] results = new String[tryCount];
         String[] expressions = new String[tryCount];
         for (int i = 0; i < tryCount; i++) {

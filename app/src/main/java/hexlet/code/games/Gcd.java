@@ -20,7 +20,7 @@ public class Gcd {
     }
 
     public static Engine packGameData(int tryCount) {
-        String description = "What is the result of the expression?";
+        String description = "Find the greatest common divisor of given numbers.";
         String[] results = new String[tryCount];
         String[] expressions = new String[tryCount];
 
