@@ -3,59 +3,84 @@ package hexlet.code;
 import hexlet.code.games.Games;
 import hexlet.code.games.Calc;
 
+import java.util.Scanner;
+
 public class Engine {
     private String description;
     private int number1;
     private int number2;
     private String expression;
-    private int result;
+    private String result;
     private boolean isCorrect;
     private int[] numbers;
+    private String[] expressions;
+    private String[] results;
     public Engine() {
 
     }
     //конструктор для данных калькулятора, НОД
-    public Engine(String description, String expression, int result){
+    public Engine(String description, String expression, String result){
         this.description = description;
         this.expression = expression;
         this.result = result;
     }
+    public Engine(String description, String[] expressions, String[] results){
+        this.description = description;
+        this.expressions = expressions;
+        this.results = results;
+    }
     //конструктор для игры в чет/нечет,постое число
-    Engine(String description, int number1, boolean isCorrect){
+    Engine(String description, int number1, String result){
         this.description = description;
         this.number1 = number1;
-        this.isCorrect = isCorrect;
+        this.result = result;
     }
     //конструктор для игры в прогрессию
-    Engine(String description, int[] numbers, int step){
+    Engine(String description, int[] numbers, String result){
         this.description = description;
         this.numbers = numbers;
-        this.result = step;
+        this.result = result;;
     }
 
-    public static void runGame(Engine eng) {
+    public static void runGame(Engine eng, int tryCount) {
 
-        int tryCount = 3;
-        // Cli client = new Cli();
         String nameClient = Cli.askUserName();
-        //client.setName(nameClient);
-        //System.out.println(game.getDescription());
+        System.out.println(eng.getDescription());
+        int currentTry = 0;
 
-        System.out.println(getData(eng,true));
+        boolean isWin = false;
+        while (currentTry < tryCount) {
+            System.out.println(getGameQuestion(eng, currentTry));
+            String UserAnswer = getUserAnswer();
+            String correctAnswer = eng.getResult(currentTry);
+            isWin = UserAnswer.equals(correctAnswer);
+            if (isWin) {
+                System.out.println("Correct!");
+                currentTry++;
+            } else {
+                System.out.println("'" + UserAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer);
+                break;
+            }
+        }
+
         String sucessMessage = "Congratulations, " + nameClient + "!";
         String failureMessage = "Let's try again, " + nameClient + "!";
-        boolean isWin = false;
 
-        System.out.println(isWin ? sucessMessage : failureMessage);
+        System.out.println(currentTry == tryCount ? sucessMessage : failureMessage);
     }
 
 
 
-    public static String getData(Engine eng, boolean showDescription ) {
+    public static String getGameQuestion(Engine eng, int Count) {
 
-            String message = (showDescription ? eng.getDescription() + "\n" : "") +
-                    "Question : " + eng.getExpression() + " testre" + eng.getResult();
+            String message = "Question : " + eng.getExpression(Count);
             return message;
+    }
+
+    public static String getUserAnswer(){
+        System.out.print("Answer : ");
+        Scanner sc = new Scanner(System.in);
+        return sc.next();
     }
 
 
@@ -84,12 +109,8 @@ public class Engine {
         this.number2 = number2;
     }
 
-    public int getResult() {
-        return result;
-    }
-
-    public void setResult(int result) {
-        this.result = result;
+    public String getResult(int currentTry) {
+        return results[currentTry];
     }
 
     public boolean isCorrect() {
@@ -108,13 +129,11 @@ public class Engine {
         this.numbers = numbers;
     }
 
-    public String getExpression() {
-        return expression;
+    public String getExpression(int count) {
+        return expressions[count];
     }
 
-    public void setExpression(String expression) {
-        this.expression = expression;
-    }
+
 
 
 

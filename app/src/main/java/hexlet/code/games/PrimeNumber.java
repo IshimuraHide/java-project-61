@@ -1,12 +1,10 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Scanner;
 
 public class PrimeNumber {
-
-    private static String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static int numbersCount = 1;
-    public static Games primeGame = new Games(description, numbersCount);
 
     public static boolean isPrime(int number) {
 
@@ -16,5 +14,18 @@ public class PrimeNumber {
             }
         }
         return true;
+    }
+
+    public static Engine packGameData(int tryCount) {
+        String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        String[] results = new String[tryCount];
+        String[] expressions = new String[tryCount];
+        for (int i = 0; i < tryCount; i++) {
+            int number1 = Games.getRandomNumber();
+
+            results[i] = isPrime(number1)? "yes" : "no";
+            expressions[i] = String.valueOf(number1);
+        }
+        return new Engine(description,expressions, results);
     }
 }

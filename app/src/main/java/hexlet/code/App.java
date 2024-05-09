@@ -6,6 +6,8 @@ import hexlet.code.games.*;
 import java.util.Scanner;
 
 
+
+
 public class App {
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
@@ -20,30 +22,31 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int input = sc.nextInt();
         Engine eng = new Engine();
+        final int tryCount = 3; //количество попыток
         switch (input) {
             case 1 :
                 Cli.askUserName();
                 return;
             case 2 :
-                //eng = Calc.packGameData();
+                eng = Even.packGameData(tryCount);
                 break;
             case 3 :
-                eng = Calc.packGameData();
+                eng = Calc.packGameData(tryCount);
                 break;
             case 4 :
-                //game = Gcd.gcdGame;
+                eng = Gcd.packGameData(tryCount);
                 break;
             case 5 :
-               // game = Progression.progressionGame;
+                eng = Progression.packGameData(tryCount);
                 break;
             case 6 :
-               // game = PrimeNumber.primeGame;
+                eng = PrimeNumber.packGameData(tryCount);
                 break;
             case 0 :
             default:
                 break;
         }
-        Engine.runGame(eng);
+        Engine.runGame(eng, tryCount);
 
 
     }
