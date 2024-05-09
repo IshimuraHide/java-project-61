@@ -10,10 +10,10 @@ public class Engine {
 
     }
 
-    public Engine(String description, String[] expressions, String[] results) {
-        this.description = description;
-        this.expressions = expressions;
-        this.results = results;
+    public Engine(String descr, String[] expr, String[] res) {
+        description = descr;
+        expressions = expr;
+        results = res;
     }
 
     public static void runGame(Engine eng, int tryCount) {
