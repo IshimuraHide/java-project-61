@@ -18,7 +18,7 @@ public class Progression {
 
         int lenProgression = 10; //длина прогрессии
 
-        String description = "What is the result of the expression?";
+        String description = "What number is missing in the progression?";
         String[] results = new String[tryCount];
         String[] expressions = new String[tryCount];
 
