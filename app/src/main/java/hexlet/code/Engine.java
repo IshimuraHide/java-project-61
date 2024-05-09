@@ -3,9 +3,9 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private String description;
-    private String[] expressions;
-    private String[] results;
+    private static String description;
+    private static String[] expressions;
+    private static String[] results;
     public Engine() {
 
     }
@@ -32,8 +32,8 @@ public class Engine {
                 System.out.println("Correct!");
                 currentTry++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(." +
-                                   " Correct answer was '" + correctAnswer + "'");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(."
+                                + " Correct answer was '" + correctAnswer + "'");
                 break;
             }
         }
@@ -56,19 +56,19 @@ public class Engine {
         return sc.next();
     }
 
-    public String getDescription() {
+    public static String getDescription() {
 
         return description;
 
     }
 
-    public String getResult(int currentTry) {
+    public static String getResult(int currentTry) {
 
         return results[currentTry];
 
     }
 
-    public String getExpression(int count) {
+    public static String getExpression(int count) {
 
         return expressions[count];
 
