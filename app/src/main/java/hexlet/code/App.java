@@ -19,29 +19,29 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
+        String input = sc.next();
         Engine eng = new Engine();
         final int tryCount = 3; //количество успешных решений для завершения
         switch (input) {
-            case 1 :
+            case "1" :
                 Cli.askUserName();
                 return;
-            case 2 :
+            case "2" :
                 eng = Even.packGameData(tryCount);
                 break;
-            case 3 :
+            case "3" :
                 eng = Calc.packGameData(tryCount);
                 break;
-            case 4 :
+            case "4" :
                 eng = Gcd.packGameData(tryCount);
                 break;
-            case 5 :
+            case "5" :
                 eng = Progression.packGameData(tryCount);
                 break;
-            case 6 :
+            case "6" :
                 eng = PrimeNumber.packGameData(tryCount);
                 break;
-            case 0 :
+            case "0" :
             default:
                 break;
         }
