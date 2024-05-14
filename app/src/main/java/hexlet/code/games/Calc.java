@@ -20,7 +20,7 @@ public class Calc {
                 res = number1 * number2;
                 break;
             default:
-                break;
+                throw new Error("Неизвестное действие:" + "'" + currentOperator + "'");
         }
 
         return res;
