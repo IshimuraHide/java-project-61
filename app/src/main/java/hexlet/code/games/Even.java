@@ -19,7 +19,7 @@ public class Even {
         String[] expressions = new String[ROUNDS];
 
         for (int i = 0; i < ROUNDS; i++) {
-            int number1 = getRandomNumber(1,100);
+            int number1 = getRandomNumber(1, 100);
             results[i] = checkIsEven(number1) ? "yes" : "no";
             expressions[i] = String.valueOf(number1);
         }

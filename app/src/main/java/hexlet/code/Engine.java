@@ -4,9 +4,6 @@ import java.util.Scanner;
 import static hexlet.code.App.ROUNDS;
 
 public class Engine {
-    private static String description;
-    private static String[] expressions;
-    private static String[] results;
 
     public static void runGame(String description, String[] expressions, String[] results) {
 
