@@ -13,7 +13,7 @@ public class Engine {
 
         boolean isWin = false;
         while (currentTry < ROUNDS) {
-            System.out.println(expressions[currentTry]);
+            System.out.println("Question: " + expressions[currentTry]);
             String userAnswer = getUserAnswer();
             String correctAnswer = results[currentTry];
             isWin = userAnswer.equals(correctAnswer);
