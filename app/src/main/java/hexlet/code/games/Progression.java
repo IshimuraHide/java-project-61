@@ -25,10 +25,13 @@ public class Progression {
         String[] expressions = new String[ROUNDS];
 
         for (int i = 0; i < ROUNDS; i++) {
+            final int minNumber = 1;
+            final int maxNumber = 50;
+            final int firstNumberPosition = 0;
 
-            int lostNumberPlace = (int) (Math.random() * lenProgression);
-            int firstNumber = getRandomNumber(1, 10);
-            int step = getRandomNumber(2, 200);
+            int lostNumberPlace = getRandomNumber(firstNumberPosition, lenProgression - 1);
+            int firstNumber = getRandomNumber(minNumber, maxNumber);
+            int step = getRandomNumber(minNumber, maxNumber);
 
             int[] numbers = progression(firstNumber, step, lenProgression);
 

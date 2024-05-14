@@ -27,8 +27,11 @@ public class Gcd {
 
         for (int i = 0; i < ROUNDS; i++) {
 
-            int number1 = getRandomNumber(1, 100);
-            int number2 = getRandomNumber(1, 100);
+            final int minNumber = 1;
+            final int maxNumber = 100;
+
+            int number1 = getRandomNumber(minNumber, maxNumber);
+            int number2 = getRandomNumber(minNumber, maxNumber);
 
             results[i] = String.valueOf(getGCD(number1, number2));
             expressions[i] = number1 + " " + number2;

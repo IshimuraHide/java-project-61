@@ -24,7 +24,9 @@ public class PrimeNumber {
         String[] results = new String[ROUNDS];
         String[] expressions = new String[ROUNDS];
         for (int i = 0; i < ROUNDS; i++) {
-            int number1 = getRandomNumber(1, 10000); //число должно быть больше нуля
+            final int minNumber = 1;
+            final int maxNumber = 10000;
+            int number1 = getRandomNumber(minNumber, maxNumber); //число должно быть больше нуля
 
             results[i] = isPrime(number1) ? "yes" : "no";
             expressions[i] = String.valueOf(number1);

@@ -33,8 +33,10 @@ public class Calc {
         String[] expressions = new String[ROUNDS];
 
         for (int i = 0; i < ROUNDS; i++) {
-            int number1 = getRandomNumber(10, 100);
-            int number2 = getRandomNumber(10, 100);
+            final int minNumber = 1;
+            final int maxNumber = 50;
+            int number1 = getRandomNumber(minNumber, maxNumber);
+            int number2 = getRandomNumber(minNumber, maxNumber);
             String[] operators = {"+", "-", "*"};
             int operatorNumber = getRandomNumber(0, operators.length);
             String currentOperator = operators[operatorNumber];
