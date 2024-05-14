@@ -1,6 +1,8 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import static hexlet.code.App.ROUNDS;
+import static hexlet.code.Utils.getRandomNumber;
 
 public class Calc {
 
@@ -24,21 +26,22 @@ public class Calc {
         return res;
     }
 
-    public static Engine packGameData(int tryCount) {
-        String description = "What is the result of the expression?";
-        String[] results = new String[tryCount];
-        String[] expressions = new String[tryCount];
+    public static void packGameData() {
 
-        for (int i = 0; i < tryCount; i++) {
-            int number1 = Engine.getRandomNumber();
-            int number2 = Engine.getRandomNumber();
+        String description = "What is the result of the expression?";
+        String[] results = new String[ROUNDS];
+        String[] expressions = new String[ROUNDS];
+
+        for (int i = 0; i < ROUNDS; i++) {
+            int number1 = getRandomNumber(10, 100);
+            int number2 = getRandomNumber(10, 100);
             String[] operators = {"+", "-", "*"};
-            int operatorNumber = (int) (Math.random() * operators.length);
+            int operatorNumber = getRandomNumber(0, operators.length);
             String currentOperator = operators[operatorNumber];
             results[i] = String.valueOf(calculate(number1, number2, currentOperator));
             expressions[i] = number1 + " " +  currentOperator + " " + number2;
         }
-        return new Engine(description, expressions, results);
+        Engine.runGame(description, expressions, results);
     }
 
 }

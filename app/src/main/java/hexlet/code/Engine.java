@@ -1,32 +1,24 @@
 package hexlet.code;
 
 import java.util.Scanner;
+import static hexlet.code.App.ROUNDS;
 
 public class Engine {
     private static String description;
     private static String[] expressions;
     private static String[] results;
-    public Engine() {
 
-    }
-
-    public Engine(String descr, String[] expr, String[] res) {
-        description = descr;
-        expressions = expr;
-        results = res;
-    }
-
-    public static void runGame(Engine eng, int tryCount) {
+    public static void runGame(String description, String[] expressions, String[] results) {
 
         String nameClient = Cli.askUserName();
-        System.out.println(eng.getDescription());
+        System.out.println(description);
         int currentTry = 0;
 
         boolean isWin = false;
-        while (currentTry < tryCount) {
-            System.out.println(getGameQuestion(eng, currentTry));
+        while (currentTry < ROUNDS) {
+            System.out.println(expressions[currentTry]);
             String userAnswer = getUserAnswer();
-            String correctAnswer = eng.getResult(currentTry);
+            String correctAnswer = results[currentTry];
             isWin = userAnswer.equals(correctAnswer);
             if (isWin) {
                 System.out.println("Correct!");
@@ -41,13 +33,7 @@ public class Engine {
         String sucessMessage = "Congratulations, " + nameClient + "!";
         String failureMessage = "Let's try again, " + nameClient + "!";
 
-        System.out.println(currentTry == tryCount ? sucessMessage : failureMessage);
-    }
-
-    public static String getGameQuestion(Engine eng, int count) {
-
-        String message = "Question: " + eng.getExpression(count);
-        return message;
+        System.out.println(currentTry == ROUNDS ? sucessMessage : failureMessage);
     }
 
     public static String getUserAnswer() {
@@ -56,28 +42,8 @@ public class Engine {
         return sc.next();
     }
 
-    public static String getDescription() {
 
-        return description;
 
-    }
 
-    public static String getResult(int currentTry) {
-
-        return results[currentTry];
-
-    }
-
-    public static String getExpression(int count) {
-
-        return expressions[count];
-
-    }
-
-    public static int getRandomNumber() {
-        final int randomMax = 20;
-        return (int) (Math.random() * randomMax);
-
-    }
 
 }

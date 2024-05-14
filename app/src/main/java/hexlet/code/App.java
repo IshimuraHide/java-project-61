@@ -8,6 +8,8 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
+    public static final int ROUNDS = 3; //количество успешных решений для завершения игры
+
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -20,33 +22,30 @@ public class App {
         System.out.print("Your choice: ");
         Scanner sc = new Scanner(System.in);
         String input = sc.next();
-        Engine eng = new Engine();
-        final int tryCount = 3; //количество успешных решений для завершения
         switch (input) {
             case "1" :
                 Cli.askUserName();
                 return;
             case "2" :
-                eng = Even.packGameData(tryCount);
+                Even.packGameData();
                 break;
             case "3" :
-                eng = Calc.packGameData(tryCount);
+                Calc.packGameData();
                 break;
             case "4" :
-                eng = Gcd.packGameData(tryCount);
+                Gcd.packGameData();
                 break;
             case "5" :
-                eng = Progression.packGameData(tryCount);
+                Progression.packGameData();
                 break;
             case "6" :
-                eng = PrimeNumber.packGameData(tryCount);
+                PrimeNumber.packGameData();
                 break;
             case "0" :
+                break;
             default:
+                System.out.println("Ни одна игра не выбрана");
                 break;
         }
-        Engine.runGame(eng, tryCount);
-
-
     }
 }

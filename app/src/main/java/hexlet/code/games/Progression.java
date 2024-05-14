@@ -1,6 +1,8 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import static hexlet.code.App.ROUNDS;
+import static hexlet.code.Utils.getRandomNumber;
 
 public class Progression {
 
@@ -14,19 +16,19 @@ public class Progression {
 
     }
 
-    public static Engine packGameData(int tryCount) {
+    public static void packGameData() {
 
         final int lenProgression = 10; //длина прогрессии
 
         String description = "What number is missing in the progression?";
-        String[] results = new String[tryCount];
-        String[] expressions = new String[tryCount];
+        String[] results = new String[ROUNDS];
+        String[] expressions = new String[ROUNDS];
 
-        for (int i = 0; i < tryCount; i++) {
+        for (int i = 0; i < ROUNDS; i++) {
 
             int lostNumberPlace = (int) (Math.random() * lenProgression);
-            int firstNumber = Engine.getRandomNumber();
-            int step = Engine.getRandomNumber();
+            int firstNumber = getRandomNumber(1, 10);
+            int step = getRandomNumber(2, 200);
 
             int[] numbers = progression(firstNumber, step, lenProgression);
 
@@ -42,6 +44,6 @@ public class Progression {
             results[i] = res;
             expressions[i] = expression;
         }
-        return new Engine(description, expressions, results);
+        Engine.runGame(description, expressions, results);
     }
 }

@@ -1,6 +1,8 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import static hexlet.code.App.ROUNDS;
+import static hexlet.code.Utils.getRandomNumber;
 
 public class PrimeNumber {
 
@@ -17,16 +19,16 @@ public class PrimeNumber {
         return true;
     }
 
-    public static Engine packGameData(int tryCount) {
+    public static void packGameData() {
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[] results = new String[tryCount];
-        String[] expressions = new String[tryCount];
-        for (int i = 0; i < tryCount; i++) {
-            int number1 = Engine.getRandomNumber() + 1; //число должно быть больше нуля
+        String[] results = new String[ROUNDS];
+        String[] expressions = new String[ROUNDS];
+        for (int i = 0; i < ROUNDS; i++) {
+            int number1 = getRandomNumber(1, 10000); //число должно быть больше нуля
 
             results[i] = isPrime(number1) ? "yes" : "no";
             expressions[i] = String.valueOf(number1);
         }
-        return new Engine(description, expressions, results);
+        Engine.runGame(description, expressions, results);
     }
 }
