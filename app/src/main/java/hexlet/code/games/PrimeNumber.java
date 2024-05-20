@@ -30,7 +30,7 @@ public class PrimeNumber {
             int number1 = getRandomNumber(minNumber, maxNumber); //число должно быть больше нуля
 
             questionsAndAnswers[i][0] = String.valueOf(number1);
-            questionsAndAnswers[i][1] = isPrime(number1) ? "yes" : "no";;
+            questionsAndAnswers[i][1] = isPrime(number1) ? "yes" : "no";
 
         }
         Engine.runGame(description, questionsAndAnswers);

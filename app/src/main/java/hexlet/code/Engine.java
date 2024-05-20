@@ -10,20 +10,23 @@ public class Engine {
 
         String nameClient = Cli.askUserName();
         System.out.println(description);
-        int currentTry = 0;
 
         boolean isWin = false;
-        while (currentTry < ROUNDS) {
-            System.out.println("Question: " + questionsAndAnswers[currentTry][0]);
-            String userAnswer = getUserAnswer();
-            String correctAnswer = questionsAndAnswers[currentTry][1];
-            isWin = userAnswer.equals(correctAnswer);
-            if (isWin) {
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
+            System.out.println("Question: " + questionsAndAnswers[i][0]);
+            String correctAnswer = questionsAndAnswers[i][1];
+
+            System.out.print("Your answer: ");
+            Scanner sc = new Scanner(System.in);
+            String userAnswer =  sc.next();
+
+            if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
-                currentTry++;
+                isWin = true;
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(."
-                                + " Correct answer was '" + correctAnswer + "'");
+                        + " Correct answer was '" + correctAnswer + "'");
+                isWin = false;
                 break;
             }
         }
@@ -31,17 +34,7 @@ public class Engine {
         String sucessMessage = "Congratulations, " + nameClient + "!";
         String failureMessage = "Let's try again, " + nameClient + "!";
 
-        System.out.println(currentTry == ROUNDS ? sucessMessage : failureMessage);
+        System.out.println(isWin ? sucessMessage : failureMessage);
     }
-
-    public static String getUserAnswer() {
-        System.out.print("Your answer: ");
-        Scanner sc = new Scanner(System.in);
-        return sc.next();
-    }
-
-
-
-
 
 }
