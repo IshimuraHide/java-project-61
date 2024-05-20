@@ -1,7 +1,8 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import static hexlet.code.App.ROUNDS;
+
+import static hexlet.code.Engine.ROUNDS;
 import static hexlet.code.Utils.getRandomNumber;
 
 public class Calc {
@@ -29,8 +30,8 @@ public class Calc {
     public static void packGameData() {
 
         String description = "What is the result of the expression?";
-        String[] results = new String[ROUNDS];
-        String[] expressions = new String[ROUNDS];
+
+        String[][]  questionsAndAnswers = new String[ROUNDS][2];
 
         for (int i = 0; i < ROUNDS; i++) {
             final int minNumber = 1;
@@ -40,10 +41,12 @@ public class Calc {
             String[] operators = {"+", "-", "*"};
             int operatorNumber = getRandomNumber(0, operators.length);
             String currentOperator = operators[operatorNumber];
-            results[i] = String.valueOf(calculate(number1, number2, currentOperator));
-            expressions[i] = number1 + " " +  currentOperator + " " + number2;
+
+            questionsAndAnswers[i][0] = number1 + " " +  currentOperator + " " + number2;
+            questionsAndAnswers[i][1] = String.valueOf(calculate(number1, number2, currentOperator));
+
         }
-        Engine.runGame(description, expressions, results);
+        Engine.runGame(description, questionsAndAnswers);
     }
 
 }

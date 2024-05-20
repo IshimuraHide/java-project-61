@@ -1,11 +1,12 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import static hexlet.code.App.ROUNDS;
+
 
 public class Engine {
+    public static final int ROUNDS = 3; //количество успешных решений для завершения игры
 
-    public static void runGame(String description, String[] expressions, String[] results) {
+    public static void runGame(String description, String[][] questionsAndAnswers) {
 
         String nameClient = Cli.askUserName();
         System.out.println(description);
@@ -13,9 +14,9 @@ public class Engine {
 
         boolean isWin = false;
         while (currentTry < ROUNDS) {
-            System.out.println("Question: " + expressions[currentTry]);
+            System.out.println("Question: " + questionsAndAnswers[currentTry][0]);
             String userAnswer = getUserAnswer();
-            String correctAnswer = results[currentTry];
+            String correctAnswer = questionsAndAnswers[currentTry][1];
             isWin = userAnswer.equals(correctAnswer);
             if (isWin) {
                 System.out.println("Correct!");

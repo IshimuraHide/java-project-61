@@ -1,7 +1,8 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import static hexlet.code.App.ROUNDS;
+
+import static hexlet.code.Engine.ROUNDS;
 import static hexlet.code.Utils.getRandomNumber;
 
 public class Progression {
@@ -21,8 +22,7 @@ public class Progression {
         final int lenProgression = 10; //длина прогрессии
 
         String description = "What number is missing in the progression?";
-        String[] results = new String[ROUNDS];
-        String[] expressions = new String[ROUNDS];
+        String[][]  questionsAndAnswers = new String[ROUNDS][2];
 
         for (int i = 0; i < ROUNDS; i++) {
             final int minNumber = 1;
@@ -41,12 +41,10 @@ public class Progression {
                 strBuilder.append(" ");
             }
 
-            String expression = strBuilder.toString();
-            String res = String.valueOf(numbers[lostNumberPlace]);
+            questionsAndAnswers[i][0] = strBuilder.toString();
+            questionsAndAnswers[i][1] = String.valueOf(numbers[lostNumberPlace]);
 
-            results[i] = res;
-            expressions[i] = expression;
         }
-        Engine.runGame(description, expressions, results);
+        Engine.runGame(description, questionsAndAnswers);
     }
 }
