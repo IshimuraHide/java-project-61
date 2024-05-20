@@ -12,13 +12,13 @@ public class Engine {
         System.out.println(description);
 
         boolean isWin = false;
-        for (int i = 0; i < questionsAndAnswers.length; i++) {
-            System.out.println("Question: " + questionsAndAnswers[i][0]);
-            String correctAnswer = questionsAndAnswers[i][1];
+        for (String[] questionsAndAnswer : questionsAndAnswers) {
+            System.out.println("Question: " + questionsAndAnswer[0]);
+            String correctAnswer = questionsAndAnswer[1];
 
             System.out.print("Your answer: ");
             Scanner sc = new Scanner(System.in);
-            String userAnswer =  sc.next();
+            String userAnswer = sc.next();
 
             if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
